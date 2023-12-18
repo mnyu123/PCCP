@@ -20,3 +20,5 @@ for d in range(4):
     nexty = j + fromy[d]
 
     print(nextx, nexty)
+
+# 여기까지는 2차원 배열 데이터 어케 움직이는지만? 뭔말이지?
