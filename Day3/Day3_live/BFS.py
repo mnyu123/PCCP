@@ -45,9 +45,12 @@ queue.append((start_x, start_y))  # 시작점 추가
 
 # 시작점을 큐에 넣고 시작함
 
+global count
+count = 0
 # 1-1. 그리고 방문처리 방문한곳에 다시 가지말라고 기록
 visited = set()
 visited.add((start_x, start_y))
+count += 1
 
 # 예전에 쓰던 4방향 보는거 쓸려고 가져옴
 fromx = [0, 0, 1, -1]
@@ -60,6 +63,8 @@ print(queue)
 
 # 5. 2~4번 반복 큐가 빌때까지
 while queue:
+
+    
 
     # 1-2. 큐의 제일 첫번째 저장된 점을 본다.
     x, y = queue.popleft()
@@ -91,7 +96,10 @@ while queue:
             # 그리고 미래를 보고 방문할거라는 예측안으로
             visited.add((nx, ny))
             # 방문기록에 추가함
+            count += 1
+            print(count)
     print(queue)
+    print("움직인 횟수",count)
 
     # nx , ny가 갈만한 모든 방향 4방향 후보의 좌표들임
 
