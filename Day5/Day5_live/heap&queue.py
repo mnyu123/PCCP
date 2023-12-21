@@ -9,3 +9,13 @@
 import heapq
 
 heap = [8, 3, 2, 1, 5, 7, 9]
+
+heapq.heapify(heap)  # 힙으로 만들어줌
+
+print(heap)
+
+heapq.heappush(heap, 4)  # 힙에 4를 추가
+
+print(heap)
+
+print(heapq.heappop(heap))  # 힙에서 가장 작은 값을 뽑아줌
