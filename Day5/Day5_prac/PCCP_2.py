@@ -48,14 +48,21 @@ print("탁구 선수들 실력", pingpong_player_ability)
 print("수영 선수들 실력", swim_player_ability)
 
 
-select = ['', '', '']  # 3명의 대표를 뽑아저 저장할 공간
-R = len(select)  # 뽑아야하는 개수
+tennis_select = ['', '', '']  # 3명의 대표를 뽑아서 저장할 공간
+pingpong_select = ['', '', '']  # 3명의 대표를 뽑아서 저장할 공간
+swim_select = ['', '', '']  # 3명의 대표를 뽑아서 저장할 공간
+
+tennis_R = len(tennis_select)  # 뽑아야하는 개수
+pingpong_R = len(pingpong_select)  # 뽑아야하는 개수
+swim_R = len(swim_select)  # 뽑아야하는 개수
+
+
 
 max_ability = []  # 최대 실력 모음집
 
 # 테니스 돌리기
 def tennis_comb(idx, s_idx):
-    if s_idx == R:  # 출전선수 리스트에 3명 다 뽑으면 4번째 인덱스에 저장하는거 방지
+    if s_idx == tennis_R:  # 출전선수 리스트에 3명 다 뽑으면 4번째 인덱스에 저장하는거 방지
         print("----------------------------------------------------------------------")
         print("테니스만 조합 하나하나의 결과:", select)
         ability = dic_tennis[select[0]] + \
@@ -77,7 +84,7 @@ def tennis_comb(idx, s_idx):
         return
 
     # 현재 선수를 선택합니다.
-    select[s_idx] = tennis_players[idx]
+    tennis_select[s_idx] = tennis_players[idx]
     tennis_comb(idx + 1, s_idx + 1)  # 다음 선수를 뽑습니다.
 
     # 현재 선수를 선택하지 않습니다.
@@ -88,11 +95,11 @@ tennis_comb(0, 0)  # 조합 생성 시작
 
 # 탁구 돌리기
 def pingpong_comb(idx, s_idx):
-    if s_idx == R:  # 출전선수 리스트에 3명 다 뽑으면 4번째 인덱스에 저장하는거 방지
+    if s_idx == pingpong_R:  # 출전선수 리스트에 3명 다 뽑으면 4번째 인덱스에 저장하는거 방지
         print("----------------------------------------------------------------------")
-        print("탁구만 조합 하나하나의 결과:", select)
-        ability = dic_pingpong[select[0]] + \
-            dic_pingpong[select[1]] + dic_pingpong[select[2]]
+        print("탁구만 조합 하나하나의 결과:", pingpong_select)
+        ability = dic_pingpong[pingpong_select[0]] + \
+            dic_pingpong[pingpong_select[1]] + dic_pingpong[pingpong_select[2]]
         max_ability.append(ability)
         print("각 조합의 능력치 합:", max_ability)
         print("탁구 최고 능력치 합:", max(max_ability))
@@ -110,7 +117,7 @@ def pingpong_comb(idx, s_idx):
         return
 
     # 현재 선수를 선택합니다.
-    select[s_idx] = pingpong_players[idx]
+    pingpong_select[s_idx] = pingpong_players[idx]
     pingpong_comb(idx + 1, s_idx + 1)  # 다음 선수를 뽑습니다.
 
     # 현재 선수를 선택하지 않습니다.
