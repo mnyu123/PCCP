@@ -6,6 +6,7 @@
 count = 0  # 경우의 수를 저장할 변수
 R = 3  # 선택할 요소의 수
 
+
 def perm(n, k):
     global count  # 전역 변수 count 사용
 
@@ -23,6 +24,7 @@ def perm(n, k):
             perm(n, k+1)
 
             arr[i], arr[k] = arr[k], arr[i]
+
 
 arr = [1, 2, 3, 4, 5]
 perm(5, 0)

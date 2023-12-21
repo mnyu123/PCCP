@@ -9,7 +9,7 @@ def combination(index, s_index):
     if s_index == len(select):
         print(select)
         return
-    
+
     if index == len(arr):
         return
 
@@ -22,5 +22,6 @@ def combination(index, s_index):
     # index번째 값을 넣지 않고 그 자리에 다음 값을 넣을 준비를 하자
     # [a] 상황에서 [b] 만들기
     combination(index + 1, s_index)
+
 
 combination(0, 0)
