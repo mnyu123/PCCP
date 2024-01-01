@@ -1,7 +1,7 @@
 # 4번 해설
 from collections import deque
 import heapq
-
+#sa
 
 def add_queue(heap, program, time):
     # 호출 시각이 가장 작은 녀석의 호출 시간이 지금보다 빠르면
